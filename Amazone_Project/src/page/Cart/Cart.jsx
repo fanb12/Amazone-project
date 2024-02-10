@@ -12,7 +12,7 @@ import { IoIosArrowUp } from "react-icons/io";
 function Cart() {
   const [{ basket, user }, dispach] = useContext(Datacontext);
   const total = basket.reduce((amount, item) => {
-    return item.price * item.amount + amount;
+    item.price + amount;
   }, 0);
 
   const increament = (item) => {
@@ -20,13 +20,14 @@ function Cart() {
       type: Type.ADD_TO_BASKET,
       item,
     });
-    const decreament = (id) => {
-      dispach({
-        type: Type.REMOVE_FROM_BASKET,
-        id,
-      });
-    };
   };
+  const decreament = (id) => {
+    dispach({
+      type: Type.REMOVE_FROM_BASKET,
+      id,
+    });
+  };
+
   return (
     <Layout>
       <section className={classes.container}>

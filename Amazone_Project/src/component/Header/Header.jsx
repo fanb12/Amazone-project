@@ -1,7 +1,7 @@
 import React from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
-import { CiShoppingCart } from "react-icons/ci";
+import { BsCart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import classes from "./header.module.css";
 import LowerHeader from "../LowerHeader/LowerHeader";
@@ -70,7 +70,7 @@ function Header() {
               <span>& order</span>
             </Link>
             <Link to="/cart" className={classes.cart}>
-              <CiShoppingCart size={35} />
+              <BsCart size={35} />
               <span>{totalItem}</span>
             </Link>
           </div>
