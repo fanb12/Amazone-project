@@ -14,7 +14,7 @@ function Carausel() {
         showThumbs={false}
       >
         {imge.map((imgitemlink) => {
-          return <img src={imgitemlink} alt="" />;
+          return <img key={imgitemlink} src={imgitemlink} alt="" />;
         })}
       </Carousel>
       <div className={classes.hero_img}></div>

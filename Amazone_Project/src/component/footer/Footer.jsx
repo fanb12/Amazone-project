@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./footr.module.css";
 import { useState, useEffect } from "react";
 import { TbWorld } from "react-icons/tb";
+import Menu from "../../page/menu/Menu";
 function Footer() {
   const [showButton, setShowButton] = useState(false);
 
@@ -165,6 +166,7 @@ function Footer() {
           </li>
         </ul>
       </div>
+      <Menu />
     </section>
   );
 }

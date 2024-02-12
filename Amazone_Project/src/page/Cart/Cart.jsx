@@ -5,14 +5,14 @@ import Productcard from "../../component/Product/Productcard";
 import CurrencyFormat from "../../component/CurrencyFormat/CurrencyFormat";
 import { Link } from "react-router-dom";
 import classes from "./cart.module.css";
-import { Type } from "../../Utiity/action.type";
+import { Type } from "../../Utility/action.type";
 import { IoIosArrowDown } from "react-icons/io";
 
 import { IoIosArrowUp } from "react-icons/io";
 function Cart() {
   const [{ basket, user }, dispach] = useContext(Datacontext);
   const total = basket.reduce((amount, item) => {
-    item.price + amount;
+    return item.price * item.amount + amount;
   }, 0);
 
   const increament = (item) => {
@@ -36,7 +36,7 @@ function Cart() {
           <h3>Your shoping basket</h3>
           <hr />
           {basket?.length == 0 ? (
-            <p>Opps ! no item in your cart</p>
+            <p>Oops ! no item in your cart</p>
           ) : (
             basket?.map((item, i) => {
               return (

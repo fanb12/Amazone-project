@@ -7,3 +7,6 @@
   --primary-color: #febd69;
   --primary-shede: #d49644;
 }
+form input {
+  box-sizing: border-box;
+}

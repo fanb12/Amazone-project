@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { DataProvider } from "./component/DataProvider/DataProvider.jsx";
 
-import { initialState, reducer } from "./Utiity/reducer.js";
+import { initialState, reducer } from "./Utility/reducer.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

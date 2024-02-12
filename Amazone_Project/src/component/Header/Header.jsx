@@ -7,8 +7,10 @@ import classes from "./header.module.css";
 import LowerHeader from "../LowerHeader/LowerHeader";
 import { Datacontext } from "../DataProvider/DataProvider";
 import { useContext } from "react";
+import { auth } from "../../Utility/firebase";
+
 function Header() {
-  const [{ basket }, dispach] = useContext(Datacontext);
+  const [{ user, basket }, dispach] = useContext(Datacontext);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -58,10 +60,26 @@ function Header() {
               </select>
             </Link>
 
-            <Link to="/Signup">
+            <Link to={!user && "/Auth"}>
               <div>
-                <p>Sign In</p>
-                <span>Account & Lists</span>
+                {user ? (
+                  <>
+                    <p>Hello {user?.email?.split("@")[0]}</p>
+                    <span
+                      onClick={() => {
+                        auth.signOut();
+                      }}
+                    >
+                      {" "}
+                      sign out
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <p>Hello,Sign In</p>
+                    <span>Account & Lists</span>
+                  </>
+                )}
               </div>
             </Link>
             {/*order*/}
