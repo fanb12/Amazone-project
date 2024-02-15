@@ -7,6 +7,7 @@ import Layout from "../../component/Layput/Layout";
 import { producturl } from "../../API/EndPoint";
 import Productcard from "../../component/Product/Productcard";
 import Loade from "../../component/loader/Loade";
+import classes from "./pro.module.css";
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -32,12 +33,14 @@ function ProductDetail() {
       {isloading ? (
         <Loade />
       ) : (
-        <Productcard
-          product={product}
-          flex={true}
-          renderDesc={true}
-          renderadd={true}
-        />
+        <div className={classes.one}>
+          <Productcard
+            product={product}
+            flex={true}
+            renderDesc={true}
+            renderadd={true}
+          />
+        </div>
       )}
     </Layout>
   );

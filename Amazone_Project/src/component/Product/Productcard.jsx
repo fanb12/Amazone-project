@@ -30,6 +30,7 @@ function Productcard({ product, flex, renderDesc, renderadd }) {
       </div>
       <div>
         <h3>{title}</h3>
+
         {renderDesc && <div style={{ maxWidth: "600px" }}> {description}</div>}
         <div className={classes.rating}>
           <Rating value={rating?.rate} precision={0.1} />
